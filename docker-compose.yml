@@ -1,0 +1,16 @@
+version: "3"
+services:
+  node-docker:
+    build: ./
+    ports: ["3000:3000"]
+    environment:
+      - PORT=3000
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root123
+    volumes:
+      - mongo-db-vol:/data/db
+volumes:
+  mongo-db-vol:

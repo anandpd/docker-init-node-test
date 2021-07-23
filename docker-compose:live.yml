@@ -1,0 +1,10 @@
+version: "3"
+services:
+  node-docker:
+    build:
+      context: ./
+      args:
+        NODE_ENV: live
+    environment:
+      - NODE_ENV=live
+    command: node index.js
